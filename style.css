@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 0px 50px 0px 100px;
+  font-family: "Lato", sans-serif;
+  background: black;
+
+  box-shadow: 1px 6px 21px 2px rgba(0, 0, 0, 0.49);
+  -webkit-box-shadow: 1px 6px 21px 2px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 1px 6px 21px 2px rgba(0, 0, 0, 0.49);
+}
+
+nav .brand {
+  position: fixed;
+  left: 30px;
+  color: white;
+  z-index: 1;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  padding: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background: white;
+  color: black;
+  padding: 8px 15px;
+}
+
+@media (max-width: 940px) {
+  nav ul {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 40px 0;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+}
+
+.sector {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sector .sec_1 {
+  display: inline-flex;
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.sector .sec_1 .static_txt {
+  font-size: 40px;
+  font-weight: 500;
+  text-shadow: -2px -4px 3px #939193;
+}
+
+.sector .sec_1 .dynamic_txt {
+  margin-left: 15px;
+  height: 50px;
+  overflow: hidden;
+  line-height: 50px;
+}
+
+.sector .sec_1 .dynamic_txt li {
+  list-style: none;
+  font-size: 35px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide steps(7) infinite;
+}
+
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
+
+.sector .sec_1 .dynamic_txt li span {
+  position: relative;
+}
+
+.sector .sec_1 .dynamic_txt li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  background: white;
+  width: 100%;
+  height: 100%;
+  border-left: 2px solid black;
+  animation: typing 3s steps(16) infinite;
+}
+
+@keyframes typing {
+  40%,
+  60% {
+    left: calc(100% + 30px);
+  }
+  100% {
+    left: 0;
+  }
+}
